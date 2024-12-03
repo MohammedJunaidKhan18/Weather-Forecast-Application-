@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MJWeather</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-black h-screen w-full">
+  <!-- Header Section -->
+  <header class="bg-blue-500 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold">MJ-Weather</h1>
+      <p class="text-lg mt-2">A trusted weather companion</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6 bg-black ">
+    <!--Date/Time, Search, Current Location -->
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-6 mb-6">
+      <!-- Time and Date -->
+      <div id="time-date" class="text-left text-lg font-medium text-white">
+        <!-- Dynamic Time and Date -->
+      </div>
+
+      <!-- Search Section -->
+      <div class="relative flex items-center mb-2 gap-1">
+        <!-- Search Input -->
+        <input id="search-input" type="text" placeholder="Enter city..." 
+               class="p-3 border border-blue-500 rounded-l-md focus:ring-2 focus:ring-blue-400" autocomplete="off">
+
+        <!-- Search Button -->
+        <button id="search-btn" 
+                class="bg-blue-500 text-white px-5 py-3 rounded-r-md hover:bg-blue-600">
+          Search
+        </button>
+
+        <!-- Dropdown List -->
+        <ul id="city-dropdown" class="absolute top-full left-0 w-full bg-white shadow-md mt-1 rounded-lg hidden z-10 max-h-48 overflow-y-auto">
+          <!-- City List will be inserted here dynamically -->
+        </ul>
+      </div>
+
+      <!-- Current Location Button -->
+      <button id="current-location-btn" 
+              class="bg-blue-500 text-white px-5 py-3 rounded-md hover:bg-blue-800 mt-2 lg:mt-0">
+        Use Current Location
+      </button>
+    </div>
+
+    <!-- Weather Display -->
+    <div class="flex flex-col lg:flex-row gap-6 justify-center">
+      <!-- Today's Weather -->
+      <div id="today-weather" class="flex-1 bg-blue-500 text-white rounded-lg shadow-lg p-8 hidden flex flex-col items-center text-center">
+        <!-- Today's Weather Details -->
+      </div>
+
+      <!-- 4-Day Forecast -->
+      <div id="forecast" class="flex-1 bg-black grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 hidden justify-center">
+        <!-- Forecast Cards -->
+      </div>
+    </div>
+  </main>
+</body>
+</html>
